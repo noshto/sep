@@ -638,14 +638,14 @@ const (
 // SERVICE - Problem sa fiskalnim servisom
 // TECHNICALERROR - When there is a temporary technical error at TCR side that prevents successful fiscalization.
 // TECHNICALERROR - Tehnička greška
-// BUSINESSNEEDS - When there is a subsequent sending conditioned by the way of doing business that prevents successful fiscalization.
-// BUSINESSNEEDS - Naknadno slanje uslovljeno načinom poslovanja
+// BUSINESSNEED - When there is a subsequent sending conditioned by the way of doing business that prevents successful fiscalization.
+// BUSINESSNEED - Naknadno slanje uslovljeno načinom poslovanja
 const (
 	NOINTERNET     SubseqDelivType = "NOINTERNET"
 	BOUNDBOOK      SubseqDelivType = "BOUNDBOOK"
 	SERVICE        SubseqDelivType = "SERVICE"
 	TECHNICALERROR SubseqDelivType = "TECHNICALERROR"
-	BUSINESSNEEDS  SubseqDelivType = "BUSINESSNEEDS"
+	BUSINESSNEED   SubseqDelivType = "BUSINESSNEED"
 )
 
 // Possible values for TCRType
