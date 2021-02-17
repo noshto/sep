@@ -582,13 +582,13 @@ const (
 // CARD - Kreditna i debitna kartica
 // Allowed only for: CASH
 //
-// CHECK - Bank cheque
-// CHECK - Bankovni ček
-// Allowed only for: CASH
+// BUSINESSCARD - Bank cheque
+// BUSINESSCARD - Kreditna i debitna kartica banke izdata poreskom obvezniku
+// Allowed only for: NONCASH
 //
 // SVOUCHER - Onetime voucher
 // SVOUCHER - Jednokratni vaučer
-// Allowed only for: CASH
+// Allowed only for: NONCASH
 //
 // COMPANY - Company cards
 // COMPANY - Kartice preduzeća prodavca i slično
@@ -596,11 +596,11 @@ const (
 //
 // ORDER - Invoice to be paid in summary invoice
 // ORDER - Račun još nije plaćen. Bite plaćen zbirnim računom
-// Allowed only for: CASH
+// Allowed only for: CASH and NONCASH
 //
 // ADVANCE - Advance payment
 // ADVANCE - Plaćanje avansom
-// Allowed only for: CASH
+// Allowed only for: NONCASH
 //
 // ACCOUNT - Transaction account
 // ACCOUNT - Transakcioni račun
@@ -610,41 +610,23 @@ const (
 // FACTORING - Faktoring
 // Allowed only for: NONCASH
 //
-// COMPENSATION - Compensation
-// COMPENSATION - Naknada
-// Allowed only for: NONCASH
-//
-// TRANSFER - Transfer of rights or debts
-// TRANSFER - Prenos prava ili dugovanja
-// Allowed only for: NONCASH
-//
-// WAIVER - Debt waiving
-// WAIVER - Odricanje od dugova
-// Allowed only for: NONCASH
-//
-// KIND - Kind paying
-// KIND - Plaćanje u naturi (kliring)
-// Allowed only for: NONCASH
-//
-// OTHER - Other non-cash payment types
 // OTHER - Ostala bezgotovinska plaćanja
-
 // Allowed only for: NONCASH
+//
+// OTHER-CASH - Ostala gotovinska plaćanja
+// Allowed only for: CASH
 const (
-	BANKNOTE     PayMethodType = "BANKNOTE"
-	CARD         PayMethodType = "CARD"
-	CHECK        PayMethodType = "CHECK"
-	SVOUCHER     PayMethodType = "SVOUCHER"
-	COMPANY      PayMethodType = "COMPANY"
-	ORDER        PayMethodType = "ORDER"
-	ADVANCE      PayMethodType = "ADVANCE"
-	ACCOUNT      PayMethodType = "ACCOUNT"
-	FACTORING    PayMethodType = "FACTORING"
-	COMPENSATION PayMethodType = "COMPENSATION"
-	TRANSFER     PayMethodType = "TRANSFER"
-	WAIVER       PayMethodType = "WAIVER"
-	KIND         PayMethodType = "KIND"
-	// OTHER        PayMethodType = "OTHER"
+	BANKNOTE           PayMethodType = "BANKNOTE"
+	CARD               PayMethodType = "CARD"
+	BUSINESSCARD       PayMethodType = "BUSINESSCARD"
+	SVOUCHER           PayMethodType = "SVOUCHER"
+	COMPANY            PayMethodType = "COMPANY"
+	ORDER              PayMethodType = "ORDER"
+	ADVANCE            PayMethodType = "ADVANCE"
+	ACCOUNT            PayMethodType = "ACCOUNT"
+	FACTORING          PayMethodType = "FACTORING"
+	PayMethodTypeOTHER PayMethodType = "OTHER"
+	OTHER_CASH         PayMethodType = "OTHER-CASH"
 )
 
 // Possible values for SubseqDelivType
