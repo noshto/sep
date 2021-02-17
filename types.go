@@ -361,6 +361,8 @@ type Invoice struct {
 	SameTaxes          *[]*SameTax         `xml:"SameTaxes>SameTax"`
 	Fees               *[]Fee              `xml:"Fees>Fee,omitempty"`
 	BadDebtInv         *BadDebtInv         `xml:"BadDebtInv,omitempty"`
+	// Internal Order Number is not required for SEP. It can be used for linking internal Invoice id with generated one.
+	InternalOrdNum string `xml:"InternalOrdNum,omitempty"`
 }
 
 // Header represents common struct of header of any request
