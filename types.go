@@ -218,6 +218,8 @@ type Buyer struct {
 	Address string `xml:"Address,attr,omitempty" json:"Address"`
 	Town    string `xml:"Town,attr,omitempty" json:"Town"`
 	Country string `xml:"Country,attr,omitempty" json:"Country"`
+	// For internal use, not exists in SEP
+	VATNum string `xml:"VAT,attr,omitempty" json:"VAT"`
 }
 
 // Fee - XML element representing one fee.
