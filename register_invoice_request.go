@@ -5,7 +5,16 @@ import (
 	"time"
 )
 
-// RegisterInvoiceRequest represents details needed for registering invoice
+// RegisterInvoiceRequestEnvelope represents SOAP Envelope of RegisterInvoiceRequest
+type RegisterInvoiceRequestEnvelope struct {
+	XMLName xml.Name `xml:"http://schemas.xmlsoap.org/soap/envelope/ Envelope"`
+	Body    struct {
+		XMLName                xml.Name               `xml:"http://www.w3.org/2001/XMLSchema Body"`
+		RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
+	} `xml:"Body"`
+}
+
+// RegisterInvoiceRequest represents details neede for registering an invoice
 type RegisterInvoiceRequest struct {
 	XMLName   xml.Name  `xml:"https://efi.tax.gov.me/fs/schema RegisterInvoiceRequest"`
 	ID        string    `xml:"Id,attr"`
