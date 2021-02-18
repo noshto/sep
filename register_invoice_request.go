@@ -14,6 +14,8 @@ type RegisterInvoiceRequestEnvelope struct {
 // Body represents SOAP Envelope body
 type Body struct {
 	XMLName                xml.Name               `xml:"http://www.w3.org/2001/XMLSchema Body"`
+	XSD                    xml.Attr               `xml:"http://www.w3.org/2001/XMLSchema xsd,attr"`
+	XSI                    xml.Attr               `xml:"http://www.w3.org/2001/XMLSchema-instance xsi,attr"`
 	RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
 }
 
