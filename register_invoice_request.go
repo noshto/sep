@@ -2,7 +2,6 @@ package sep
 
 import (
 	"encoding/xml"
-	"fmt"
 	"time"
 )
 
@@ -14,39 +13,9 @@ type RegisterInvoiceRequestEnvelope struct {
 
 // Body represents SOAP Envelope body
 type Body struct {
-	XSD                    XSDNS                  `xml:"xsd,attr"`
-	XSI                    XSINS                  `xml:"xsi,attr"`
+	XSD                    string                 `xml:"http://www.w3.org/2001/XMLSchema xsd,attr"`
+	XSI                    string                 `xml:"http://www.w3.org/2001/XMLSchema-instance xsi,attr"`
 	RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
-}
-
-// XSDNS represents xmlns:xsd namespace
-type XSDNS xml.Attr
-
-// XSINS represents xmlns:xsd namespace
-type XSINS xml.Attr
-
-// MarshalXMLAttr to conform to Marshaller interface
-func (attr *XSDNS) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
-	fmt.Println(name)
-	return xml.Attr{
-		Name: xml.Name{
-			Space: "xmlns",
-			Local: "xsd",
-		},
-		Value: "http://www.w3.org/2001/XMLSchema",
-	}, nil
-}
-
-// MarshalXMLAttr to conform to Marshaller interface
-func (attr *XSINS) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
-	fmt.Println(name)
-	return xml.Attr{
-		Name: xml.Name{
-			Space: "xmlns",
-			Local: "xsi",
-		},
-		Value: "http://www.w3.org/2001/XMLSchema-instance",
-	}, nil
 }
 
 // RegisterInvoiceRequest represents details neede for registering an invoice
