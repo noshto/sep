@@ -13,9 +13,32 @@ type RegisterInvoiceRequestEnvelope struct {
 
 // Body represents SOAP Envelope body
 type Body struct {
-	XSD                    string                 `xml:"http://www.w3.org/2001/XMLSchema xsd,attr"`
-	XSI                    string                 `xml:"http://www.w3.org/2001/XMLSchema-instance xsi,attr"`
+	XSD                    XSD                    `xml:"xsd,attr"`
+	XSI                    XSI                    `xml:"xsi,attr"`
 	RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
+}
+
+type XSD string
+type XSI string
+
+func (attr *XSD) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name: xml.Name{
+			Space: "xsd",
+			Local: "xmlns",
+		},
+		Value: "http://www.w3.org/2001/XMLSchema",
+	}, nil
+}
+
+func (attr *XSI) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name: xml.Name{
+			Space: "xsi",
+			Local: "xmlns",
+		},
+		Value: "http://www.w3.org/2001/XMLSchema-instance",
+	}, nil
 }
 
 // RegisterInvoiceRequest represents details neede for registering an invoice
