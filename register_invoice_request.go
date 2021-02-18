@@ -8,10 +8,13 @@ import (
 // RegisterInvoiceRequestEnvelope represents SOAP Envelope of RegisterInvoiceRequest
 type RegisterInvoiceRequestEnvelope struct {
 	XMLName xml.Name `xml:"http://schemas.xmlsoap.org/soap/envelope/ Envelope"`
-	Body    struct {
-		XMLName                xml.Name               `xml:"http://www.w3.org/2001/XMLSchema Body"`
-		RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
-	} `xml:"Body"`
+	Body    Body     `xml:"Body"`
+}
+
+// Body represents SOAP Envelope body
+type Body struct {
+	XMLName                xml.Name               `xml:"http://www.w3.org/2001/XMLSchema Body"`
+	RegisterInvoiceRequest RegisterInvoiceRequest `xml:"RegisterInvoiceRequest"`
 }
 
 // RegisterInvoiceRequest represents details neede for registering an invoice
