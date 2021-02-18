@@ -9,6 +9,16 @@ const (
 	PROD EnvironmentType = "PROD"
 )
 
+// Client represents Buyer, but with additional details
+type Client struct {
+	Name    string `json:"Name"`
+	TIN     string `json:"TIN"`
+	VAT     string `json:"VAT"`
+	Address string `json:"Address"`
+	Town    string `json:"Town"`
+	Country string `json:"Country"`
+}
+
 // Config represents configuration that is used by efi modules
 type Config struct {
 	// Company details
@@ -22,8 +32,8 @@ type Config struct {
 	Fax         string `json:"Fax"`
 	BankAccount string `json:"BankAccount"`
 
-	// List of Buyers
-	Buyers []Buyer `json:"Buyers"`
+	// List of Clients
+	Clients []Client `json:"Clients"`
 
 	// Environment, eg staging or production
 	Environment EnvironmentType `json:"Environment"`

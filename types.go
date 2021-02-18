@@ -212,14 +212,12 @@ type Seller struct {
 // Country - Buyer’s country.
 // Country - Država prodavca. Obavezno ako postoji račun, kupac, vrsta identifikacije i račun, kupac identifikacioni broj.
 type Buyer struct {
-	IDType  IDType `xml:"IDType,attr" json:"IDType"`
-	IDNum   string `xml:"IDNum,attr" json:"IDNum"`
-	Name    string `xml:"Name,attr,omitempty" json:"Name"`
-	Address string `xml:"Address,attr,omitempty" json:"Address"`
-	Town    string `xml:"Town,attr,omitempty" json:"Town"`
-	Country string `xml:"Country,attr,omitempty" json:"Country"`
-	// For internal use, not exists in SEP
-	VATNum string `xml:"VAT,attr,omitempty" json:"VAT"`
+	IDType  IDType `xml:"IDType,attr"`
+	IDNum   string `xml:"IDNum,attr"`
+	Name    string `xml:"Name,attr,omitempty"`
+	Address string `xml:"Address,attr,omitempty"`
+	Town    string `xml:"Town,attr,omitempty"`
+	Country string `xml:"Country,attr,omitempty"`
 }
 
 // Fee - XML element representing one fee.
