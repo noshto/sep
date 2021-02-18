@@ -39,8 +39,9 @@ type Config struct {
 	Environment EnvironmentType `json:"Environment"`
 
 	// EFI-related constants
-	BusinUnitCode string `json:"BusinUnitCode"`
-	TCRCode       string `json:"TCRCode"`
-	SoftCode      string `json:"SoftCode"`
-	OperatorCode  string `json:"OperatorCode"`
+	BusinUnitCode  string `json:"BusinUnitCode"`
+	TCRCode        string `json:"TCRCode"`
+	SoftCode       string `json:"SoftCode"`
+	OperatorCode   string `json:"OperatorCode"`
+	MaintainerCode string `json:"MaintainerCode"`
 }
