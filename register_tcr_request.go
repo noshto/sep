@@ -7,14 +7,15 @@ import (
 
 // TCR represents details about TCR
 type TCR struct {
-	Type           TCRType        `xml:"Type,attr"`
-	ValidFrom      Date           `xml:"ValidFrom,attr,omitempty"`
-	ValidTo        Date           `xml:"ValidTo,attr"`
-	TCRIntID       TCRIntID       `xml:"TCRIntID,attr"`
-	IssuerTIN      TIN            `xml:"IssuerTIN,attr"`
-	SoftCode       SoftCode       `xml:"SoftCode,attr"`
-	MaintainerCode MaintainerCode `xml:"MaintainerCode,attr"`
-	BusinUnitCode  BusinUnitCode  `xml:"BusinUnitCode,attr"`
+	Type           TCRType        `xml:"Type,attr" json:"Type"`
+	ValidFrom      Date           `xml:"ValidFrom,attr,omitempty" json:"ValidFrom"`
+	ValidTo        Date           `xml:"ValidTo,attr" json:"ValidTo"`
+	TCRIntID       TCRIntID       `xml:"TCRIntID,attr" json:"TCRIntID"`
+	IssuerTIN      TIN            `xml:"IssuerTIN,attr" json:"IssuerTIN"`
+	SoftCode       SoftCode       `xml:"SoftCode,attr" json:"SoftCode"`
+	MaintainerCode MaintainerCode `xml:"MaintainerCode,attr" json:"MaintainerCode"`
+	BusinUnitCode  BusinUnitCode  `xml:"BusinUnitCode,attr" json:"BusinUnitCode"`
+	TCRCode        string         `xml:"-" json:"TCRCode"`
 }
 
 // RegisterTCRRequest contains details of TCR needed for registering

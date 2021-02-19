@@ -1,6 +1,7 @@
 package sep
 
 import (
+	"encoding/json"
 	"encoding/xml"
 	"time"
 )
@@ -14,6 +15,35 @@ func (d Date) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 		Name:  name,
 		Value: time.Time(d).Format("2006-01-02"),
 	}, nil
+}
+
+// UnmarshalXMLAttr unmarshals Date
+func (d *Date) UnmarshalXMLAttr(attr xml.Attr) error {
+	t, err := time.Parse("2006-01-02", attr.Value)
+	if err != nil {
+		return err
+	}
+	*d = Date(t)
+	return nil
+}
+
+// UnmarshalJSON conformance
+func (d *Date) UnmarshalJSON(b []byte) error {
+	var tmp string
+	if err := json.Unmarshal(b, &tmp); err != nil {
+		return err
+	}
+	t, err := time.Parse("2006-01-02", tmp)
+	if err != nil {
+		return err
+	}
+	*d = Date(t)
+	return nil
+}
+
+// MarshalJSON conformance
+func (d Date) MarshalJSON() ([]byte, error) {
+	return json.Marshal(time.Time(d).Format("2006-01-02"))
 }
 
 // DateTime represents a date with time component

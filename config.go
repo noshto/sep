@@ -32,16 +32,10 @@ type Config struct {
 	Fax         string `json:"Fax"`
 	BankAccount string `json:"BankAccount"`
 
-	// List of Clients
-	Clients []Client `json:"Clients"`
-
 	// Environment, eg staging or production
 	Environment EnvironmentType `json:"Environment"`
 
 	// EFI-related constants
-	BusinUnitCode  string `json:"BusinUnitCode"`
-	TCRCode        string `json:"TCRCode"`
-	SoftCode       string `json:"SoftCode"`
-	OperatorCode   string `json:"OperatorCode"`
-	MaintainerCode string `json:"MaintainerCode"`
+	OperatorCode string `json:"OperatorCode"`
+	TCR          *TCR   `json:"TCR"`
 }
