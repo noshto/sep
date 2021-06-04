@@ -3,9 +3,9 @@ package sep
 // Service URLs
 const (
 	TestingURL          = "https://efitest.tax.gov.me/fs-v1/FiscalizationService.wsdl"
-	TestingVerifyURL    = "https://efitest.tax.gov.me/ic/#/verify?iic=%s&tin=%s&crtd=%s&ord=%d&bu=%s&cr=%s&sw=%s&prc=%s"
+	TestingVerifyURL    = "https://efitest.tax.gov.me/ic/#/verify?iic=%v&tin=%v&crtd=%v&ord=%v&bu=%v&cr=%v&sw=%v&prc=%v"
 	ProductionURL       = "https://efi.tax.gov.me/fs-v1/FiscalizationService.wsdl"
-	ProductionVerifyURL = "https://mapr.tax.gov.me/ic/#/verify?iic=%s&tin=%s&crtd=%s&ord=%d&bu=%s&cr=%s&sw=%s&prc=%s"
+	ProductionVerifyURL = "https://mapr.tax.gov.me/ic/#/verify?iic=%v&tin=%v&crtd=%v&ord=%v&bu=%v&cr=%v&sw=%v&prc=%v"
 )
 
 // OTHER represents default "OTHER" option that can be used for ExemptFromVATType, FeeType, PayMethodType and TypeOfSelfiss
