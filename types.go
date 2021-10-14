@@ -330,7 +330,6 @@ func (a Amount) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 type Invoice struct {
 	TypeOfInv          TypeOfInv           `xml:"TypeOfInv,attr"`
 	TypeOfSelfiss      TypeOfSelfiss       `xml:"TypeOfSelfiss,attr,omitempty"`
-	IsSimplifiedInv    bool                `xml:"IsSimplifiedInv,attr"`
 	IssueDateTime      DateTime            `xml:"IssueDateTime,attr"`
 	InvNum             InvNum              `xml:"InvNum,attr"`
 	InvOrdNum          InvOrdNum           `xml:"InvOrdNum,attr"`
