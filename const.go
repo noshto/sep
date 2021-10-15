@@ -1,5 +1,15 @@
 package sep
 
+// InvType constants
+const (
+	INVOICE     InvType = "INVOICE"
+	CORRECTIVE  InvType = "CORRECTIVE"
+	SUMMARY     InvType = "SUMMARY"
+	PERIODICAL  InvType = "PERIODICAL"
+	ADVANCE     InvType = "ADVANCE"
+	CREDIT_NOTE InvType = "CREDIT_NOTE"
+)
+
 // Service URLs
 const (
 	TestingURL          = "https://efitest.tax.gov.me/fs-v1/FiscalizationService.wsdl"

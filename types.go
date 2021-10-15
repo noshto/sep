@@ -6,6 +6,9 @@ import (
 	"time"
 )
 
+// InvType represents type of invoice
+type InvType string
+
 // CountryCode represents country code, 3char
 type CountryCode string
 
@@ -328,6 +331,7 @@ func (a Amount) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 
 // Invoice represents details of invoice
 type Invoice struct {
+	InvType            InvType             `xml:"InvType,attr"`
 	TypeOfInv          TypeOfInv           `xml:"TypeOfInv,attr"`
 	TypeOfSelfiss      TypeOfSelfiss       `xml:"TypeOfSelfiss,attr,omitempty"`
 	IssueDateTime      DateTime            `xml:"IssueDateTime,attr"`
