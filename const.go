@@ -12,9 +12,9 @@ const (
 
 // Service URLs
 const (
-	TestingURL          = "https://efitest.tax.gov.me/fs-v1/FiscalizationService.wsdl"
+	TestingURL          = "https://213.149.97.147/fs-v1" //"https://efitest.tax.gov.me/fs-v1/FiscalizationService.wsdl"
 	TestingVerifyURL    = "https://efitest.tax.gov.me/ic/#/verify?iic=%v&tin=%v&crtd=%v&ord=%v&bu=%v&cr=%v&sw=%v&prc=%v"
-	ProductionURL       = "https://efi.tax.gov.me/fs-v1/FiscalizationService.wsdl"
+	ProductionURL       = "https://213.149.97.147/fs-v1.wsdl" //"https://efi.tax.gov.me/fs-v1/FiscalizationService.wsdl"
 	ProductionVerifyURL = "https://mapr.tax.gov.me/ic/#/verify?iic=%v&tin=%v&crtd=%v&ord=%v&bu=%v&cr=%v&sw=%v&prc=%v"
 )
 
